@@ -3,24 +3,22 @@ import tkinter as tk
 
 screen = tk.Tk(screenName= "Resistor Color Code Calculator")
 
-BUTTON_WIDTH = 15
+BUTTON_WIDTH = 10
 BUTTONS_ROW_ONE = 2
 
-
-
-
+# default pressed is 10k with 5% tolerance
 
 # column (digit) 1
 
-button21 = tk.Button(text= "1", bg= "brown", fg= "white", width= BUTTON_WIDTH, relief= "sunken")
-button31 = tk.Button(text= "2", bg= "red", fg= "white", width= BUTTON_WIDTH)
-button41 = tk.Button(text= "3", bg= "orange", fg= "white", width= BUTTON_WIDTH)
-button51 = tk.Button(text= "4", bg= "yellow", fg= "black", width= BUTTON_WIDTH)
-button61 = tk.Button(text= "5", bg= "green", fg= "white", width= BUTTON_WIDTH)
-button71 = tk.Button(text= "6", bg= "blue", fg= "white", width= BUTTON_WIDTH)
-button81 = tk.Button(text= "7", bg= "violet", fg= "white", width= BUTTON_WIDTH)
-button91 = tk.Button(text= "8", bg= "gray", fg= "white", width= BUTTON_WIDTH)
-button101 = tk.Button(text= "9", bg= "white", fg= "black", width= BUTTON_WIDTH)
+button21 = tk.Button(text= "1", bg= "BROWN", fg= "white", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
+button31 = tk.Button(text= "2", bg= "RED", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button41 = tk.Button(text= "3", bg= "ORANGE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button51 = tk.Button(text= "4", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button61 = tk.Button(text= "5", bg= "GREEN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button71 = tk.Button(text= "6", bg= "BLUE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button81 = tk.Button(text= "7", bg= "PURPLE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button91 = tk.Button(text= "8", bg= "GRAY", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button101 = tk.Button(text= "9", bg= "WHITE", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 
 button21.grid(row= BUTTONS_ROW_ONE + 1, column= 2)
 button31.grid(row= BUTTONS_ROW_ONE + 2, column= 2)
@@ -32,7 +30,6 @@ button81.grid(row= BUTTONS_ROW_ONE + 7, column= 2)
 button91.grid(row= BUTTONS_ROW_ONE + 8, column= 2)
 button101.grid(row= BUTTONS_ROW_ONE + 9, column= 2)
 
-# deafult sunken is 1 (10k)
 column1 = [
     button21,
     button31,
@@ -48,16 +45,16 @@ column1 = [
 
 # column (digit) 2
 
-button12 = tk.Button(text= "0", bg= "black", fg= "white", width= BUTTON_WIDTH, relief= "sunken")
-button22 = tk.Button(text= "1", bg= "brown", fg= "white", width= BUTTON_WIDTH)
-button32 = tk.Button(text= "2", bg= "red", fg= "white", width= BUTTON_WIDTH)
-button42 = tk.Button(text= "3", bg= "orange", fg= "white", width= BUTTON_WIDTH)
-button52 = tk.Button(text= "4", bg= "yellow", fg= "black", width= BUTTON_WIDTH)
-button62 = tk.Button(text= "5", bg= "green", fg= "white", width= BUTTON_WIDTH)
-button72 = tk.Button(text= "6", bg= "blue", fg= "white", width= BUTTON_WIDTH)
-button82 = tk.Button(text= "7", bg= "violet", fg= "white", width= BUTTON_WIDTH)
-button92 = tk.Button(text= "8", bg= "gray", fg= "white", width= BUTTON_WIDTH)
-button102 = tk.Button(text= "9", bg= "white", fg= "black", width= BUTTON_WIDTH)
+button12 = tk.Button(text= "0", bg= "BLACK", fg= "white", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
+button22 = tk.Button(text= "1", bg= "BROWN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button32 = tk.Button(text= "2", bg= "RED", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button42 = tk.Button(text= "3", bg= "ORANGE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button52 = tk.Button(text= "4", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button62 = tk.Button(text= "5", bg= "GREEN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button72 = tk.Button(text= "6", bg= "BLUE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button82 = tk.Button(text= "7", bg= "PURPLE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button92 = tk.Button(text= "8", bg= "GRAY", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button102 = tk.Button(text= "9", bg= "white", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 
 button12.grid(row= BUTTONS_ROW_ONE, column= 3)
 button22.grid(row= BUTTONS_ROW_ONE + 1, column= 3)
@@ -70,7 +67,6 @@ button82.grid(row= BUTTONS_ROW_ONE + 7, column= 3)
 button92.grid(row= BUTTONS_ROW_ONE + 8, column= 3)
 button102.grid(row= BUTTONS_ROW_ONE + 9, column= 3)
 
-# deafult sunken is 0 (10k)
 column2 = {
     button12,
     button22,
@@ -86,19 +82,19 @@ column2 = {
 
 # column 3 (multiplier)
 
-button13 = tk.Button(text= "10^0", bg= "black", fg= "white", width= BUTTON_WIDTH)
-button23 = tk.Button(text= "10^1", bg= "brown", fg= "white", width= BUTTON_WIDTH)
-button33 = tk.Button(text= "10^2", bg= "red", fg= "white", width= BUTTON_WIDTH)
-button43 = tk.Button(text= "10^3", bg= "orange", fg= "white", width= BUTTON_WIDTH, relief= "sunken")
-button53 = tk.Button(text= "10^4", bg= "yellow", fg= "black", width= BUTTON_WIDTH)
-button63 = tk.Button(text= "10^5", bg= "green", fg= "white", width= BUTTON_WIDTH)
-button73 = tk.Button(text= "10^6", bg= "blue", fg= "white", width= BUTTON_WIDTH)
-button83 = tk.Button(text= "10^7", bg= "violet", fg= "white", width= BUTTON_WIDTH)
-button93 = tk.Button(text= "10^8", bg= "gray", fg= "white", width= BUTTON_WIDTH)
-button103 = tk.Button(text= "10^9", bg= "white", fg= "black", width= BUTTON_WIDTH)
-button113 = tk.Button(text= "10^-1", bg= "gold", fg= "black", width= BUTTON_WIDTH)
-button123 = tk.Button(text= "10^-2", bg= "silver", fg= "black", width= BUTTON_WIDTH)
-button133 = tk.Button(text= "10^-3", bg= "pink", fg= "black", width= BUTTON_WIDTH)
+button13 = tk.Button(text= "10^0", bg= "BLACK", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button23 = tk.Button(text= "10^1", bg= "BROWN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button33 = tk.Button(text= "10^2", bg= "RED", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button43 = tk.Button(text= "10^3", bg= "ORANGE", fg= "white", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
+button53 = tk.Button(text= "10^4", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button63 = tk.Button(text= "10^5", bg= "GREEN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button73 = tk.Button(text= "10^6", bg= "BLUE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button83 = tk.Button(text= "10^7", bg= "PURPLE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button93 = tk.Button(text= "10^8", bg= "GRAY", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button103 = tk.Button(text= "10^9", bg= "white", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button113 = tk.Button(text= "10^-1", bg= "GOLD", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button123 = tk.Button(text= "10^-2", bg= "SILVER", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button133 = tk.Button(text= "10^-3", bg= "PINK", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 
 
 button13.grid(row= BUTTONS_ROW_ONE, column= 4)
@@ -115,7 +111,6 @@ button113.grid(row= BUTTONS_ROW_ONE + 10, column= 4)
 button123.grid(row= BUTTONS_ROW_ONE + 11, column= 4)
 button133.grid(row= BUTTONS_ROW_ONE + 12, column= 4)
 
-# deafult sunken is 3 (10k)
 column3 = {
     button13,
     button23,
@@ -135,16 +130,16 @@ column3 = {
 
 # column 4 (tolerance)
 
-button24 = tk.Button(text= "±1%", bg= "brown", fg= "white", width= BUTTON_WIDTH)
-button34 = tk.Button(text= "±2%", bg= "red", fg= "white", width= BUTTON_WIDTH)
-button44 = tk.Button(text= "±0.05%", bg= "orange", fg= "white", width= BUTTON_WIDTH)
-button54 = tk.Button(text= "±0.02%", bg= "yellow", fg= "black", width= BUTTON_WIDTH)
-button64 = tk.Button(text= "±0.5%", bg= "green", fg= "white", width= BUTTON_WIDTH)
-button74 = tk.Button(text= "±0.25%", bg= "blue", fg= "white", width= BUTTON_WIDTH)
-button84 = tk.Button(text= "±0.1%", bg= "violet", fg= "white", width= BUTTON_WIDTH)
-button94 = tk.Button(text= "±0.01%", bg= "gray", fg= "white", width= BUTTON_WIDTH)
-button114 = tk.Button(text= "±5%", bg= "gold", fg= "black", width= BUTTON_WIDTH, relief= "sunken")
-button124 = tk.Button(text= "±10%", bg= "silver", fg= "black", width= BUTTON_WIDTH)
+button24 = tk.Button(text= "±1%", bg= "BROWN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button34 = tk.Button(text= "±2%", bg= "RED", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button44 = tk.Button(text= "±0.05%", bg= "ORANGE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button54 = tk.Button(text= "±0.02%", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+button64 = tk.Button(text= "±0.5%", bg= "GREEN", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button74 = tk.Button(text= "±0.25%", bg= "BLUE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button84 = tk.Button(text= "±0.1%", bg= "PURPLE", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button94 = tk.Button(text= "±0.01%", bg= "GRAY", fg= "white", width= BUTTON_WIDTH, bd= 5)
+button114 = tk.Button(text= "±5%", bg= "GOLD", fg= "BLACK", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
+button124 = tk.Button(text= "±10%", bg= "SILVER", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 
 
 button24.grid(row= BUTTONS_ROW_ONE + 1, column= 5)
@@ -158,7 +153,6 @@ button94.grid(row= BUTTONS_ROW_ONE + 8, column= 5)
 button114.grid(row= BUTTONS_ROW_ONE + 10, column= 5)
 button124.grid(row= BUTTONS_ROW_ONE + 11, column= 5)
 
-# deafult sunken is 11 (5%)
 column4 = {
     button24,
     button33,
@@ -192,8 +186,8 @@ tolerance = 0
 tolerance_text = tk.Message(text= "Tolerance: " + str(tolerance), width= 100)
 tolerance_text.grid(row= BUTTONS_ROW_ONE - 1, column= 5)
 
-enter_button = tk.Button(text= "=", width= BUTTON_WIDTH, activebackground= "blue", activeforeground= "white")
-enter_button.grid(row= 0, column= 4)
+enter_button = tk.Button(text= "CALCULATE", width= BUTTON_WIDTH, bg= "teal", fg= "white")
+enter_button.grid(row= BUTTONS_ROW_ONE - 2, column= 5)
 
 
 
@@ -202,4 +196,9 @@ enter_button.grid(row= 0, column= 4)
 
 
 
-screen.mainloop()
+
+
+
+
+
+
