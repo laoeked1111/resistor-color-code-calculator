@@ -8,7 +8,7 @@ COLORS = {
     "YELLOW": 4, 
     "GREEN": 5, 
     "BLUE": 6, 
-    "VIOLET": 7, 
+    "PURPLE": 7, 
     "GRAY": 8, 
     "WHITE": 9,
     "GOLD": -1,
@@ -24,7 +24,7 @@ TOLERANCES = {
     "YELLOW": 0.02,
     "GREEN": 0.5,
     "BLUE": 0.25,
-    "VIOLET": 0.1,
+    "PURPLE": 0.1,
     "GRAY": 0.01, 
     "GOLD": 5,
     "SILVER": 10, 
@@ -46,6 +46,7 @@ def color_to_value(color1, color2, color3, color4=None):
         min_val: minimum resistance value given by calculated value and tolerance
         val: nominal value of resistance
         max_val: maximum resistance value given by calculated value and tolerance
+        tol: tolerance
     """
 
     assert color1 in COLORS, AssertionError("Color 1 not valid!")
@@ -58,13 +59,10 @@ def color_to_value(color1, color2, color3, color4=None):
     max_val = val * (1+tol/100)
     min_val = val * (1-tol/100)
 
-    return min_val, val, max_val 
-
-
+    return min_val, val, max_val, tol
 
 
 def value_to_prefix(val, decimals=2):
-
     """
     Converts a value of a resistor to a string form with certain decimal placesfor better readability.
 
@@ -87,8 +85,12 @@ def value_to_prefix(val, decimals=2):
     elif val >= 1e3:
         num = val / 1e3
         unit = "kR"
-    
-    return f"{num: .{decimals}f} {unit}"
+    elif 1e-3 <= val < 1:
+        num = val * 1e3
+        unit = "mR"
+
+    num = round(num, decimals)
+    return f"{num} {unit}"
 
 
 

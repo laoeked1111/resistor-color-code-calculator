@@ -1,25 +1,69 @@
 
 from graphics import *
-import color_code_calcs
+import color_code_calcs as ccc
 
+
+# default values are 10kR with 5% tolerance
+cur_col1 = "BROWN"
+cur_col2 = "BLACK"
+cur_col3 = "ORANGE"
+cur_col4 = "GOLD"
+
+
+# functions to update buttons and values
 def update_col(col, btn):
     # update the current button that is "pressed" to btn
     for button in col:
         button.configure(relief= "raised")
     btn.configure(relief="ridge")
 
+    # update values for resistance and tolerance
+    lower, nominal, upper, tolerance = ccc.color_to_value(cur_col1, cur_col2, cur_col3, cur_col4)
+
+    lower_bound_text.config(text= "Lower:\n" + ccc.value_to_prefix(lower), justify= "center")
+    upper_bound_text.config(text= "Upper:\n" + ccc.value_to_prefix(upper), justify= "center")
+    nominal_text.config(text= "Nominal:\n" + ccc.value_to_prefix(nominal), justify= "center")
+    tolerance_text.config(text= f"Tolerance:\n{tolerance}%", justify= "center")
+
+
+
 def update_col1(btn):
-    update_col(column1, btn)
+   global cur_col1
+   cur_col1 = btn.cget("bg")
+   update_col(column1, btn)
 
 def update_col2(btn):
-    update_col(column2, btn)
+   global cur_col2
+   cur_col2 = btn.cget("bg")
+   update_col(column2, btn)
 
 def update_col3(btn):
-    update_col(column3, btn)
+   global cur_col3
+   cur_col3 = btn.cget("bg")
+   update_col(column3, btn)
 
 def update_col4(btn):
-    update_col(column4, btn)
+   global cur_col4
+   cur_col4 = btn.cget("bg")
+   update_col(column4, btn)
+ 
 
+
+
+# get typed inputs
+resistance_input = None
+tolerance_input = None
+
+def input_to_colors():
+   pass
+
+
+
+
+
+
+
+# configure all the buttons 
 
 # column 1
 button21.configure(command= lambda: update_col1(button21))
@@ -70,6 +114,4 @@ button84.configure(command= lambda: update_col4(button84))
 button94.configure(command= lambda: update_col4(button94))
 button114.configure(command= lambda: update_col4(button114))
 button124.configure(command= lambda: update_col4(button124))
-
-
 
