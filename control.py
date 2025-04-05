@@ -48,21 +48,6 @@ def update_col4(btn):
    update_col(column4, btn)
  
 
-
-
-# get typed inputs
-resistance_input = None
-tolerance_input = None
-
-def input_to_colors():
-   pass
-
-
-
-
-
-
-
 # configure all the buttons 
 
 # column 1
@@ -114,4 +99,3 @@ button84.configure(command= lambda: update_col4(button84))
 button94.configure(command= lambda: update_col4(button94))
 button114.configure(command= lambda: update_col4(button114))
 button124.configure(command= lambda: update_col4(button124))
-

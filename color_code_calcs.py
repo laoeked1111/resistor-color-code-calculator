@@ -75,19 +75,19 @@ def value_to_prefix(val, decimals=2):
     """
 
     num = val
-    unit = "R"
+    unit = "Ω"
     if val >= 1e9:
         num = val / 1e9
-        unit = "GR"
+        unit = "GΩ"
     elif val >= 1e6:
         num = val / 1e6
-        unit = "MR"
+        unit = "MΩ"
     elif val >= 1e3:
         num = val / 1e3
-        unit = "kR"
+        unit = "kΩ"
     elif 1e-3 <= val < 1:
         num = val * 1e3
-        unit = "mR"
+        unit = "mΩ"
 
     num = round(num, decimals)
     return f"{num} {unit}"
@@ -107,24 +107,26 @@ def value_tol_to_color(val, tol=0):
         colors: 3-4 element tuple of strings containing the colors on the resistor
     """
 
-    num = val
+    number = val
     multiplier = 0
 
-    while num < 10 or num > 99:
-        if num < 10:
-            num *= 10
+    while number < 10 or number > 99:
+        if number < 10:
+            number *= 10
             multiplier -= 1
-        if num > 99:
-            num /= 10
+        if number > 99:
+            number /= 10
             multiplier += 1
-    
+
+    number = int(number)
+
     assert multiplier in COLORS.values(), AssertionError("No valid multiplier band!")
 
     color1, color2, color3, color4 = None, None, None, None
 
     for color, value in COLORS.items():
-        if value == num // 10: color1 = color
-        if value == num % 10: color2 = color
+        if value == number // 10: color1 = color
+        if value == number % 10: color2 = color
         if value == multiplier: color3 = color
     
     if tol == 0:

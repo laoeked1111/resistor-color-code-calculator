@@ -11,7 +11,7 @@ BUTTONS_ROW_ONE = 2
 # column (digit) 1
 button21 = tk.Button(text= "1", bg= "BROWN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
 button31 = tk.Button(text= "2", bg= "RED", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
-button41 = tk.Button(text= "3", bg= "ORANGE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
+button41 = tk.Button(text= "3", bg= "ORANGE", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button51 = tk.Button(text= "4", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button61 = tk.Button(text= "5", bg= "GREEN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button71 = tk.Button(text= "6", bg= "BLUE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
@@ -46,7 +46,7 @@ column1 = [
 button12 = tk.Button(text= "0", bg= "BLACK", fg= "WHITE", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
 button22 = tk.Button(text= "1", bg= "BROWN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button32 = tk.Button(text= "2", bg= "RED", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
-button42 = tk.Button(text= "3", bg= "ORANGE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
+button42 = tk.Button(text= "3", bg= "ORANGE", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button52 = tk.Button(text= "4", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button62 = tk.Button(text= "5", bg= "GREEN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button72 = tk.Button(text= "6", bg= "BLUE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
@@ -82,7 +82,7 @@ column2 = {
 button13 = tk.Button(text= "10^0", bg= "BLACK", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button23 = tk.Button(text= "10^1", bg= "BROWN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button33 = tk.Button(text= "10^2", bg= "RED", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
-button43 = tk.Button(text= "10^3", bg= "ORANGE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
+button43 = tk.Button(text= "10^3", bg= "ORANGE", fg= "BLACK", width= BUTTON_WIDTH, bd= 5, relief= "ridge")
 button53 = tk.Button(text= "10^4", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button63 = tk.Button(text= "10^5", bg= "GREEN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button73 = tk.Button(text= "10^6", bg= "BLUE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
@@ -128,7 +128,7 @@ column3 = {
 # column 4 (tolerance)
 button24 = tk.Button(text= "±1%", bg= "BROWN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button34 = tk.Button(text= "±2%", bg= "RED", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
-button44 = tk.Button(text= "±0.05%", bg= "ORANGE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
+button44 = tk.Button(text= "±0.05%", bg= "ORANGE", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button54 = tk.Button(text= "±0.02%", bg= "YELLOW", fg= "BLACK", width= BUTTON_WIDTH, bd= 5)
 button64 = tk.Button(text= "±0.5%", bg= "GREEN", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
 button74 = tk.Button(text= "±0.25%", bg= "BLUE", fg= "WHITE", width= BUTTON_WIDTH, bd= 5)
@@ -164,31 +164,38 @@ column4 = {
 
 
 # output text
-lower_bound_text = tk.Message(text= "Lower:\n9.50 kR", width= 100, justify= "center")
+lower_bound_text = tk.Message(text= "Lower:\n9.50 kΩ", width= 100, justify= "center")
 lower_bound_text.grid(row= BUTTONS_ROW_ONE - 1, column= 2)
 
-upper_bound_text = tk.Message(text= "Upper:\n10.50 kR", width= 100, justify= "center")
+upper_bound_text = tk.Message(text= "Upper:\n10.50 kΩ", width= 100, justify= "center")
 upper_bound_text.grid(row= BUTTONS_ROW_ONE - 1, column= 4)
 
-nominal_text = tk.Message(text= "Nominal:\n10.00 kR", width= 100, justify= "center")
+nominal_text = tk.Message(text= "Nominal:\n10.00 kΩ", width= 100, justify= "center")
 nominal_text.grid(row= BUTTONS_ROW_ONE - 1, column= 3)
 
 tolerance_text = tk.Message(text= "Tolerance:\n5%", width= 100, justify= "center")
 tolerance_text.grid(row= BUTTONS_ROW_ONE - 1, column= 5)
 
 
+# additional buttons for aesthetics
+useless_button_1 = tk.Button(bg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+useless_button_2 = tk.Button(bg= "BLACK", width= BUTTON_WIDTH, bd= 5)
+useless_button_3 = tk.Button(bg= "GOLD", width= BUTTON_WIDTH, bd= 5)
+useless_button_4 = tk.Button(bg= "SILVER", width= BUTTON_WIDTH, bd= 5)
+useless_button_5 = tk.Button(bg= "PINK", width= BUTTON_WIDTH, bd= 5)
+useless_button_6 = tk.Button(bg= "GOLD", width= BUTTON_WIDTH, bd= 5)
+useless_button_7 = tk.Button(bg= "SILVER", width= BUTTON_WIDTH, bd= 5)
+useless_button_8 = tk.Button(bg= "PINK", width= BUTTON_WIDTH, bd= 5)
+useless_button_9 = tk.Button(bg= "WHITE", width= BUTTON_WIDTH, bd= 5)
+useless_button_10 = tk.Button(bg="PINK", width= BUTTON_WIDTH, bd= 5)
 
-# typed inputs
-enter_button = tk.Button(text= "CALCULATE", width= BUTTON_WIDTH, bg= "TEAL", fg= "WHITE")
-enter_button.grid(row= BUTTONS_ROW_ONE - 2, column= 5)
-
-value_var = tk.StringVar(value= "Resistance...")
-value_input = tk.Entry(justify= "center", textvariable= value_var)
-value_input.grid(row= BUTTONS_ROW_ONE - 2, column = 3)
-
-tol_var = tk.StringVar(value= "Tolerance...")
-tol_input = tk.Entry(justify= "center", textvariable= tol_var)
-tol_input.grid(row= BUTTONS_ROW_ONE - 2, column= 4)
-
-
-
+useless_button_1.grid(row= BUTTONS_ROW_ONE, column= 2)
+useless_button_2.grid(row= BUTTONS_ROW_ONE, column= 5)
+useless_button_3.grid(row= BUTTONS_ROW_ONE + 10, column= 2)
+useless_button_4.grid(row= BUTTONS_ROW_ONE + 11, column= 2)
+useless_button_5.grid(row= BUTTONS_ROW_ONE + 12, column= 2)
+useless_button_6.grid(row= BUTTONS_ROW_ONE + 10, column= 3)
+useless_button_7.grid(row= BUTTONS_ROW_ONE + 11, column= 3)
+useless_button_8.grid(row= BUTTONS_ROW_ONE + 12, column= 3)
+useless_button_9.grid(row= BUTTONS_ROW_ONE + 9, column= 5)
+useless_button_10.grid(row= BUTTONS_ROW_ONE + 12, column= 5)
